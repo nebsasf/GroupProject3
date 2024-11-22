@@ -1,0 +1,17 @@
+import calendar
+from datetime import datetime
+
+class Caregiver:
+    def __init__(self, name, phone, email, pay_rate=20):
+        """
+        Initialize a Caregiver object.
+        """
+        self.name = name
+        self.phone = phone
+        self.email = email
+        self.pay_rate = pay_rate
+        self.hours_worked = 0  # Tracks assigned hours
+        self.availability = {
+            'AM': 'available',
+            'PM': 'available'
+        }
