@@ -95,4 +95,28 @@ def calculate_pay(self):
     print(f"Total Monthly Pay: ${monthly_pay:.2f}")
 
 
+## Create main program structure to initialize scheduler and caregivers, set availability.
+if __name__ == "__main__":
+    scheduler = Scheduler()
+
+    caregiver1 = Caregiver("Alice Johnson", "555-1234", "alice@example.com")
+    caregiver2 = Caregiver("Bob Smith", "555-5678", "bob@example.com", pay_rate=25)
+
+    scheduler.add_caregiver(caregiver1)
+    scheduler.add_caregiver(caregiver2)
+
+    caregiver1.set_availability("AM", "preferred")
+    caregiver2.set_availability("PM", "preferred")
+
+## Generate schedule for the current month and year, and calculate the pay.
+    print("\nCaregivers:")
+    scheduler.list_caregivers()
+
+    current_year = datetime.now().year
+    current_month = datetime.now().month
+    scheduler.generate_schedule(current_year, current_month)
+
+    scheduler.calculate_pay()
+
+
 
