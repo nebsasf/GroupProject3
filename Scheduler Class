@@ -32,3 +32,12 @@ class Caregiver:
         return (f"Caregiver: {self.name}, Phone: {self.phone}, Email: {self.email}, "
                 f"Pay Rate: ${self.pay_rate}/hr, Hours Worked: {self.hours_worked}")
 
+# Scheduler Class
+class Scheduler:
+    def __init__(self):
+        """
+        Initialize the Scheduler with an empty list of caregivers.
+        """
+        self.caregivers = []
+
+
