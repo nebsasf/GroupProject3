@@ -3,9 +3,9 @@ from datetime import datetime
 
 class Caregiver:
     def __init__(self, name, phone, email, pay_rate=20):
-        """
-        Initialize a Caregiver object.
-        """
+
+        #Initialize a Caregiver object.
+    
         self.name = name
         self.phone = phone
         self.email = email
@@ -17,27 +17,27 @@ class Caregiver:
         }
 
     def set_availability(self, shift, status):
-        """
-        Update the caregiver's availability for a given shift.
-        """
+
+        #Update the caregiver's availability for a given shift.
+
         if shift in self.availability and status in ['preferred', 'available', 'unavailable']:
             self.availability[shift] = status
         else:
             print("Invalid shift or status!")
 
     def __str__(self):
-        """
-        Return a string representation of the caregiver.
-        """
+       
+        #Return a string representation of the caregiver.
+
         return (f"Caregiver: {self.name}, Phone: {self.phone}, Email: {self.email}, "
                 f"Pay Rate: ${self.pay_rate}/hr, Hours Worked: {self.hours_worked}")
 
 # Scheduler Class
 class Scheduler:
     def __init__(self):
-        """
-        Initialize the Scheduler with an empty list of caregivers.
-        """
+    
+        #Initialize the Scheduler with an empty list of caregivers.
+
         self.caregivers = []
 
 
