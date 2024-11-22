@@ -47,5 +47,11 @@ def add_caregiver(self, caregiver):
     else:
         print("Invalid caregiver object!")
 
+## Add list_caregivers method to list all caregivers.
+def list_caregivers(self):
+    for caregiver in self.caregivers:
+        print(caregiver)
+
+
 
 
