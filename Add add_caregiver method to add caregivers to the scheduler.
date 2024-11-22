@@ -40,4 +40,12 @@ class Scheduler:
 
         self.caregivers = []
 
+## Add add_caregiver method to add caregivers to the scheduler.
+def add_caregiver(self, caregiver):
+    if isinstance(caregiver, Caregiver):
+        self.caregivers.append(caregiver)
+    else:
+        print("Invalid caregiver object!")
+
+
 
