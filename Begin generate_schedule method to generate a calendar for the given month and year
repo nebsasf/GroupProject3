@@ -52,6 +52,13 @@ def list_caregivers(self):
     for caregiver in self.caregivers:
         print(caregiver)
 
+# Begin generate_schedule method to generate a calendar for the given month and year.
+
+def generate_schedule(self, year, month):
+    cal = calendar.HTMLCalendar()
+    html_calendar = cal.formatmonth(year, month)
+    print("\nGenerated Calendar:")
+    print(html_calendar)
 
 
 
