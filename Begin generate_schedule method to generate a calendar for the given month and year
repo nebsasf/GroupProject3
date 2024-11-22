@@ -60,5 +60,26 @@ def generate_schedule(self, year, month):
     print("\nGenerated Calendar:")
     print(html_calendar)
 
+## Add logic in `generate_schedule` to assign caregivers to AM and PM shifts.
+    print("\nAssigning caregivers to shifts...")
+    for day in range(1, calendar.monthrange(year, month)[1] + 1):
+        print(f"Day {day}:")
+        am_assigned = False
+        pm_assigned = False
+        for caregiver in self.caregivers:
+            if caregiver.availability['AM'] == 'preferred' and not am_assigned:
+                print(f"  AM Shift: {caregiver.name} (preferred)")
+                caregiver.hours_worked += 6
+                am_assigned = True
+            elif caregiver.availability['PM'] == 'preferred' and not pm_assigned:
+                print(f"  PM Shift: {caregiver.name} (preferred)")
+                caregiver.hours_worked += 6
+                pm_assigned = True
+
+        if not am_assigned:
+            print("  AM Shift: No preferred caregiver available")
+        if not pm_assigned:
+            print("  PM Shift: No preferred caregiver available")
+
 
 
