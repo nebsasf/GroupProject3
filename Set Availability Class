@@ -15,3 +15,11 @@ class Caregiver:
             'AM': 'available',
             'PM': 'available'
         }
+    def set_availability(self, shift, status):
+        """
+        Update the caregiver's availability for a given shift.
+        """
+        if shift in self.availability and status in ['preferred', 'available', 'unavailable']:
+            self.availability[shift] = status
+        else:
+            print("Invalid shift or status!")
