@@ -81,5 +81,18 @@ def generate_schedule(self, year, month):
         if not pm_assigned:
             print("  PM Shift: No preferred caregiver available")
 
+## Add calculate_pay method to calculate weekly and monthly pay for caregivers.
+def calculate_pay(self):
+    total_weekly_pay = 0
+    print("\nWeekly Pay Report:")
+    for caregiver in self.caregivers:
+        weekly_pay = caregiver.hours_worked * caregiver.pay_rate
+        total_weekly_pay += weekly_pay
+        print(f"  {caregiver.name}: ${weekly_pay:.2f}")
+    print(f"\nTotal Weekly Pay: ${total_weekly_pay:.2f}")
+
+    monthly_pay = total_weekly_pay * 4  # Assume 4 weeks in a month
+    print(f"Total Monthly Pay: ${monthly_pay:.2f}")
+
 
 
